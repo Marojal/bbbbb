@@ -1,0 +1,102 @@
+{% extends 'dashboard/base.html' %} {% load static %} {% block content %}
+<div class="header bg-primary pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-white d-inline-block mb-0">Upload File</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--6">
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">{{ title }}</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <label class="col-sm-2 col-form-label">Nama</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.nama }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.email }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">Tempat Lahir</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.tempat_lahir }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">Tanggal Lahir</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.tanggal_lahir }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">NIK</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.nik }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">No HP</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.no_hp }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">No HP Ortu</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.no_hp_ortu }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">Alamat</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.alamat }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">Kelurahan</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.kelurahan }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">Kecamatan</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.kecamatan }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">Kabupaten</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.kabupaten }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">Jenis Kelamin</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.jenis_kelamin }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">Program Studi 1</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.prodi1 }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">Program Studi 2</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.prodi2 }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">Program Studi 3</label>
+              <div class="col-sm-10">
+                <div class="form-group">{{ formulir.prodi3 }}</div>
+              </div>
+              <label class="col-sm-2 col-form-label">Foto</label>
+              <div class="col-sm-10">
+                <div class="form-group">
+                  <img src="{{ formulir.foto.url }}" alt="Foto" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-right">
+            <a href="{% url 'formulir_list' %}" class="btn btn-success">Kembali</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %} {% block js %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+{% endblock %}

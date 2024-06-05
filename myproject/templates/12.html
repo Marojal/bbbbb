@@ -1,0 +1,310 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+  <meta name="author" content="Creative Tim">
+  <title>{{ title }}</title>
+  <!-- Favicon -->
+  <link rel="icon" href='{% static "admin/assets/img/brand/favicon.png" %}' type="image/png">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <!-- Icons -->
+  <link rel="stylesheet" href='{% static "admin/assets/vendor/nucleo/css/nucleo.css" %}' type="text/css">
+  <link rel="stylesheet" href='{% static "admin/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" %}' type="text/css">
+  <!-- Argon CSS -->
+  <link rel="stylesheet" href='{% static "admin/assets/css/argon.css" %}' ?v=1.2.1 type="text/css">
+</head>
+
+<body>
+  <!-- Sidenav -->
+  <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-dark" id="sidenav-main">
+    <div class="scrollbar-inner">
+      <!-- Brand -->
+      <div class="sidenav-header  d-flex  align-items-center">
+        <a class="navbar-brand" href="javascript:void(0)">
+          <h1><span class="text-red">PMB</span> <span class="text-white">ONLINE</span></h6>
+        </a>
+        <div class=" ml-auto ">
+          <!-- Sidenav toggler -->
+          <div class="sidenav-toggler d-none d-xl-block" data-action="sidenav-unpin" data-target="#sidenav-main">
+            <div class="sidenav-toggler-inner bg-white">
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-inner">
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+          <!-- Nav items -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'dashboard' %}">
+                <i class="ni ni-chart-pie-35 text-info"></i>
+                <span class="nav-link-text text-white">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/form-pendaftaran">
+                <i class="ni ni-badge text-green"></i>
+                <span class="nav-link-text text-white">Formulir</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/upload-berkas">
+                <i class="ni ni-single-copy-04 text-red"></i>
+                <span class="nav-link-text text-white">Upload File</span>
+              </a>
+            </li>
+          </ul>
+          <!-- Divider -->
+          <hr class="my-3">
+          <!-- Heading -->
+          <h6 class="navbar-heading p-0 text-muted">
+            <span class="docs-normal text-white">Admin</span>
+            <span class="docs-mini">__</span>
+          </h6>
+          <!-- Navigation -->
+          <ul class="navbar-nav mb-md-3">
+            <li class="nav-item">
+              <a class="nav-link" href="/admins" target="_blank">
+                <i class="ni ni-circle-08 text-orange"></i>
+                <span class="nav-link-text text-white">Admin</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Main content -->
+  <div class="main-content" id="panel">
+    <!-- Topnav -->
+    <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Search form -->
+          <!-- Navbar links -->
+          <ul class="navbar-nav align-items-center  ml-md-auto ">
+            <li class="nav-item d-xl-none">
+              <!-- Sidenav toggler -->
+              <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+            <li class="nav-item dropdown">
+              <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="media align-items-center">
+                  <div class="media-body  ml-2  d-none d-lg-block">
+                    <span class="mb-0 text-sm  font-weight-bold">Marojal Bahrein</span>
+                  </div>
+                </div>
+              </a>
+              <div class="dropdown-menu  dropdown-menu-right ">
+                <div class="dropdown-header noti-title">
+                  <h6 class="text-overflow m-0">Welcome!</h6>
+                </div>
+                <div class="dropdown-divider"></div>
+                <a href="#!" class="dropdown-item">
+                  <i class="ni ni-user-run"></i>
+                  <span>Logout</span>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Header -->
+    <!-- Header -->
+    <div class="header bg-primary pb-6">
+      <div class="container-fluid">
+        <div class="header-body">
+          <div class="row align-items-center py-4">
+            <div class="col-lg-6 col-7">
+              <h6 class="h2 text-white d-inline-block mb-0">Upload File</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Page content -->
+    <div class="container-fluid mt--6">
+      <div class="card">
+        <!-- Card header -->
+        <div class="card-header border-0">
+          <div class="row">
+            <div class="col-6">
+              <h3 class="mb-0">Striped table</h3>
+            </div>
+            <div class="col-6 text-right">
+              <a href="#" class="btn btn-sm btn-primary btn-round btn-icon" data-toggle="tooltip" data-original-title="Edit product">
+                <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
+                <span class="btn-inner--text">Export</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Light table -->
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush table-striped">
+            <thead class="thead-light">
+              <tr>
+                <th>Author</th>
+                <th>Created at</th>
+                <th>Product</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table-user">
+                  <b>John Michael</b>
+                </td>
+                <td>
+                  <span class="text-muted">10/09/2018</span>
+                </td>
+                <td>
+                  <a href="#!" class="font-weight-bold">Argon Dashboard PRO</a>
+                </td>
+                <td class="table-actions">
+                  <a href="#!" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
+                    <i class="fas fa-user-edit"></i>
+                  </a>
+                  <a href="#!" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-user">
+                  <b>Alex Smith</b>
+                </td>
+                <td>
+                  <span class="text-muted">08/09/2018</span>
+                </td>
+                <td>
+                  <a href="#!" class="font-weight-bold">Argon Design System</a>
+                </td>
+                <td class="table-actions">
+                  <a href="#!" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
+                    <i class="fas fa-user-edit"></i>
+                  </a>
+                  <a href="#!" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-user">
+                  <b>Samantha Ivy</b>
+                </td>
+                <td>
+                  <span class="text-muted">30/08/2018</span>
+                </td>
+                <td>
+                  <a href="#!" class="font-weight-bold">Black Dashboard</a>
+                </td>
+                <td class="table-actions">
+                  <a href="#!" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
+                    <i class="fas fa-user-edit"></i>
+                  </a>
+                  <a href="#!" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-user">
+                  <b>John Michael</b>
+                </td>
+                <td>
+                  <span class="text-muted">10/09/2018</span>
+                </td>
+                <td>
+                  <a href="#!" class="font-weight-bold">Argon Dashboard PRO</a>
+                </td>
+                <td class="table-actions">
+                  <a href="#!" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
+                    <i class="fas fa-user-edit"></i>
+                  </a>
+                  <a href="#!" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-user">
+                  <b>John Michael</b>
+                </td>
+                <td>
+                  <span class="text-muted">10/09/2018</span>
+                </td>
+                <td>
+                  <a href="#!" class="font-weight-bold">Argon Dashboard PRO</a>
+                </td>
+                <td class="table-actions">
+                  <a href="#!" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
+                    <i class="fas fa-user-edit"></i>
+                  </a>
+                  <a href="#!" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="footer pt-0">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6">
+            <div class="copyright text-center  text-lg-left  text-muted">
+              &copy; 2021 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+              <li class="nav-item">
+                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
+              </li>
+              <li class="nav-item">
+                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="https://www.creative-tim.com/license" class="nav-link" target="_blank">License</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+  <script src='{% static "admin/assets/vendor/jquery/dist/jquery.min.js" %}'></script>
+  <script src='{% static "admin/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js" %}'></script>
+  <script src='{% static "admin/assets/vendor/js-cookie/js.cookie.js" %}'></script>
+  <script src='{% static "admin/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js" %}'></script>
+  <script src='{% static "admin/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js" %}'></script>
+  <!-- Argon JS -->
+  <script src='{% static "admin/assets/js/argon.js" %}' ?v=1.2.1></script>
+  <!-- Demo JS - remove this in your project -->
+  <script src="./assets/js/demo.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+{% extends 'dashboard/base.html' %} {% load static %} {% block content %}
+<div class="header bg-primary pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-white d-inline-block mb-0">Upload File</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--6">
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">{{ title }}</h4>
+          </div>            
+          <div class="table-responsive py-4">
+            <table class="table table-flush" id="datatable-basic">
+              <thead class="thead-light">
+                <tr>
+                  <th>NO</th>
+                  <th>NAMA</th>
+                  <th>EMAIL</th>
+                  <th>STATUS</th>
+                  <th>EDIT</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>NO</th>
+                  <th>NAMA</th>
+                  <th>EMAIL</th>
+                  <th>STATUS</th>
+                  <th>EDIT</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td>Donna Snider</td>
+                  <td>Customer Support</td>
+                  <td>New York</td>
+                  <td>27</td>
+                  <td class="table-actions">
+                    <a href="#!" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
+                      <i class="fas fa-user-edit text-green"></i>
+                    </a>
+                    <a href="#!" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
+                      <i class="fas fa-trash"></i>
+                    </a>
+                    <a href="#!" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
+                      <i class="fas fa-trash text-danger" ></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer text-right">
+            <a href="{% url 'formulir' %}" class="btn btn-success">Tambah Formulir</a>
+            <!-- Ini harus cocok dengan pola URL -->
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock content %} {% block js %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+{% endblock %}

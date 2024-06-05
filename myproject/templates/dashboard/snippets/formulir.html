@@ -1,0 +1,105 @@
+{% extends 'dashboard/base.html' %} {% load static %} {% block content %}
+<div class="header bg-primary pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-white d-inline-block mb-0">Upload File</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--6">
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <form method="POST" class="form-horizontal" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="card-header">
+              <h4 class="card-title">{{ title }}</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Nama</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.nama.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.email.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">Tempat Lahir</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.tempat_lahir.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">Tanggal Lahir</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.tanggal_lahir.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">NIK</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.nik.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">No HP</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.no_hp.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">No HP Ortu</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.no_hp_ortu.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">Alamat</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.alamat.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">Kelurahan</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.kelurahan.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">Kecamatan</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.kecamatan.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">Kabupaten</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.kabupaten.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">Jenis Kelamin</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.jenis_kelamin.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">Program Studi 1</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.prodi1.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">Program Studi 2</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.prodi2.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">Program Studi 3</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.prodi3.as_widget }}</div>
+                </div>
+                <label class="col-sm-2 col-form-label">Foto</label>
+                <div class="col-sm-10">
+                  <div class="form-group">{{ form.foto.as_widget }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer text-right">
+              <a href="{% url 'formulir'%}" >
+                <button type="submit" class="btn btn-primary">Simpan</button>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %} {% block js %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+{% endblock %}

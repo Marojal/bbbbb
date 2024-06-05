@@ -1,0 +1,63 @@
+{% extends 'dashboard/base.html' %} {% load static %} {% block content %}
+<div class="header bg-primary pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-white d-inline-block mb-0">Upload File</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--6">
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">{{ title }}</h4>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="ms-1">No</th>
+                  <th scope="ms-1">Nama</th>
+                  <th scope="ms-1">Email</th>
+                  <th scope="ms-1">Prodi</th>
+                  <th scope="ms-1">Status</th>
+                  <th scope="ms-1">Edit</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for formulir in formulirs %}
+                <tr>
+                  <th scope="row" class="col-md-2">{{ forloop.counter }}</th>
+                  <td class="ms-1">{{ formulir.nama }}</td>
+                  <td class="ms-1">{{ formulir.email }}</td>
+                  <td>{{ formulir.prodi1 }}
+                  </td>
+                  <td class = "ms-1 {% if formulir.status == 'Belum Diverifikasi' %}bg-primary
+                  {% elif formulir.status == 'Lulus' %}bg-success
+                  {% elif formulir.status == 'Gagal' %}bg-danger
+                  {% endif %}">{{ formulir.get_status_display }}</td>
+                  <td class="ms-1"><a href="{% url 'formulir_detail' pk=formulir.pk %}">Detail</a></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer text-right">
+            <a href="{% url 'formulir' %}" class="btn btn-success">Tambah Formulir</a>
+            <!-- Ini harus cocok dengan pola URL -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %} {% block js %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+{% endblock %}
